@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -25,7 +26,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+          <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
             <Link
               href="/"
               className="text-foreground/80 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1"
@@ -44,10 +45,13 @@ export default function Header() {
             >
               About
             </Link>
+            <ThemeToggle />
           </nav>
 
-          {/* Mobile Menu Button - 48px touch target */}
-          <button
+          {/* Mobile: Theme Toggle + Menu Button */}
+          <div className="flex md:hidden items-center gap-1">
+            <ThemeToggle />
+            <button
             className="md:hidden p-3 min-w-[48px] min-h-[48px] rounded-lg hover:bg-muted transition-colors flex items-center justify-center active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -78,6 +82,7 @@ export default function Header() {
               )}
             </svg>
           </button>
+          </div>
         </div>
 
         {/* Mobile Navigation - Large touch targets */}

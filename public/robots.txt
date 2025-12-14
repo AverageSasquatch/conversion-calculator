@@ -9,3 +9,4 @@ Sitemap: https://unitconverter.com/sitemap.xml
 
 # Crawl-delay for politeness (optional)
 Crawl-delay: 1
+
