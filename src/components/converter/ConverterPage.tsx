@@ -4,6 +4,7 @@ import ExplanationSection from "@/components/converter/ExplanationSection";
 import RelatedConversions from "@/components/converter/RelatedConversions";
 import AdPlaceholder from "@/components/layout/AdPlaceholder";
 import { getConversionBySlug } from "@/lib/conversions";
+import { ConverterJsonLd, FAQJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 interface ConverterPageProps {
   slug: string;
@@ -18,22 +19,27 @@ export default function ConverterPage({ slug }: ConverterPageProps) {
 
   return (
     <div className="min-h-screen">
+      {/* Structured Data for SEO */}
+      <ConverterJsonLd conversion={conversion} />
+      <FAQJsonLd conversion={conversion} />
+      <BreadcrumbJsonLd conversion={conversion} />
+
       {/* Top Banner Ad */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <AdPlaceholder type="banner" />
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col lg:flex-row gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
           {/* Main Content Area */}
-          <div className="flex-1 space-y-6">
+          <div className="flex-1 space-y-4 sm:space-y-6">
             {/* Page Header */}
             <div>
-              <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
                 {conversion.title}
               </h1>
-              <p className="text-foreground/60">{conversion.description}</p>
+              <p className="text-sm sm:text-base text-foreground/60">{conversion.description}</p>
             </div>
 
             {/* Converter Widget */}
@@ -45,7 +51,7 @@ export default function ConverterPage({ slug }: ConverterPageProps) {
             {/* Related Conversions */}
             <RelatedConversions currentSlug={slug} />
 
-            {/* Mobile Ad */}
+            {/* Mobile/Tablet Ad */}
             <div className="lg:hidden">
               <AdPlaceholder type="mobile" />
             </div>

@@ -9,13 +9,16 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://unitconverter.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Unit Converter - Quick & Accurate Conversions",
+    default: "Unit Converter - Quick & Accurate Conversions | Free Online Tool",
     template: "%s | Unit Converter",
   },
   description:
-    "Free online unit converter for weight, length, temperature, and volume. Fast, accurate conversions with simple, clean interface.",
+    "Free online unit converter for weight, length, temperature, and volume. Fast, accurate conversions with a simple, clean interface. No ads, no signup required.",
   keywords: [
     "unit converter",
     "conversion calculator",
@@ -23,12 +26,50 @@ export const metadata: Metadata = {
     "length converter",
     "temperature converter",
     "volume converter",
+    "lbs to kg",
+    "fahrenheit to celsius",
+    "inches to cm",
+    "metric converter",
+    "imperial to metric",
   ],
   authors: [{ name: "Unit Converter" }],
+  creator: "Unit Converter",
+  publisher: "Unit Converter",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
+    url: siteUrl,
     siteName: "Unit Converter",
+    title: "Unit Converter - Quick & Accurate Conversions",
+    description:
+      "Free online unit converter for weight, length, temperature, and volume. Fast, accurate conversions with a simple, clean interface.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Unit Converter - Quick & Accurate Conversions",
+    description:
+      "Free online unit converter for weight, length, temperature, and volume. Fast, accurate conversions.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // Add your verification codes here when available
+    // google: "google-site-verification-code",
+    // yandex: "yandex-verification-code",
   },
 };
 

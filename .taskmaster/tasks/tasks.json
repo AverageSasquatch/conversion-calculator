@@ -1,0 +1,248 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": "1",
+        "title": "Initialize Next.js project with TypeScript and Tailwind CSS",
+        "description": "Set up the base Next.js project structure with TypeScript, Tailwind CSS for styling, and essential configurations for SEO and performance.",
+        "details": "npx create-next-app@latest conversion-calculator --typescript --tailwind --eslint --app; Configure next.config.js for images and headers; Set up base layout with specified color palette (#FFFFFF bg, #333333 text, #4A90E2 primary); Implement system fonts (Inter or system-ui); Add global CSS resets and base styles matching PRD color scheme.",
+        "testStrategy": "Verify project builds without errors (npm run build); Check Tailwind styles apply correctly on sample components; Confirm TypeScript compilation passes; Test responsive viewport meta tags present.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-12-14T18:51:42.248Z"
+      },
+      {
+        "id": "2",
+        "title": "Create shared UI components and conversion utilities",
+        "description": "Build reusable components (Header, Footer, ConverterWidget) and core conversion formulas for all unit types.",
+        "details": "Create /components/Header.tsx with logo and nav; /components/Footer.tsx with About/Contact/Privacy/Terms links; /components/ConverterWidget.tsx with From input, unit dropdowns, To result (read-only), real-time conversion; Implement conversion formulas: lbsToKg=(lbs*0.453592), ozToG=(oz*28.3495), inToCm=(in*2.54), ftToM=(ft*0.3048), fToC=((f-32)*5/9), lToMl=(l*1000), galToL=(gal*3.78541) and reverses; Use React hooks for real-time calculation.",
+        "testStrategy": "Unit test all conversion formulas with known values (e.g., 1lb=0.453592kg within 6 decimals); Test ConverterWidget renders correctly; Verify real-time updates on input change; Test dropdown value persistence.",
+        "priority": "high",
+        "dependencies": [
+          "1"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-12-14T18:51:42.819Z"
+      },
+      {
+        "id": "3",
+        "title": "Implement Homepage layout and category cards",
+        "description": "Build responsive homepage with header, search placeholder, category grid (Weight/Length/Temp/Volume), ad placeholder, and footer.",
+        "details": "Create /app/page.tsx; Implement category cards linking to: Weight→/weight/pounds-to-kilograms, Length→/length/inches-to-centimeters, etc.; Add non-functional search input 'Search a conversion…'; Include ad placeholder div (300x250 banner style); Use CSS Grid for responsive category layout (2-col desktop, 1-col mobile); Ensure semantic HTML with proper headings.",
+        "testStrategy": "Verify all category cards render and link correctly; Test responsive breakpoints (desktop/tablet/mobile); Confirm search input placeholder displays; Check ad placeholder sizing/responsiveness; Lighthouse SEO score ≥90.",
+        "priority": "high",
+        "dependencies": [
+          "1",
+          "2"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-12-14T18:51:43.816Z"
+      },
+      {
+        "id": "4",
+        "title": "Create Weight conversion pages infrastructure",
+        "description": "Implement Pounds↔Kilograms and Ounces↔Grams converter pages with SEO metadata and layouts.",
+        "details": "Create /app/weight/pounds-to-kilograms/page.tsx and ounces-to-grams/page.tsx; Use ConverterWidget with preconfigured units; Add SEO: title='Pounds to Kilograms Converter', meta description; Include explanation text and 2 related links each; Right sidebar ad placeholder (desktop), bottom ad (mobile); Use kebab-case URLs as specified.",
+        "testStrategy": "Test accurate conversions (2lb=0.907184kg, 1oz=28.3495g); Verify SEO titles/descriptions unique; Confirm responsive ad placement switches correctly; Test related links navigate properly.",
+        "priority": "high",
+        "dependencies": [
+          "1",
+          "2",
+          "3"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-12-14T18:51:44.914Z"
+      },
+      {
+        "id": "5",
+        "title": "Create Length conversion pages infrastructure",
+        "description": "Implement Inches↔Centimeters and Feet↔Meters converter pages with proper SEO and layouts.",
+        "details": "Create /app/length/inches-to-centimeters/page.tsx and feet-to-meters/page.tsx; Preconfigure dropdowns for each pair; Add unique SEO metadata; Include brief explanation sections; Add related conversions (cross-category links); Implement responsive ad placeholders.",
+        "testStrategy": "Verify conversions (1in=2.54cm, 1ft=0.3048m); Test mobile/desktop ad layouts; Confirm semantic HTML structure (h1 per page); Validate related links point to existing pages.",
+        "priority": "high",
+        "dependencies": [
+          "1",
+          "2",
+          "3"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-12-14T18:51:45.860Z"
+      },
+      {
+        "id": "6",
+        "title": "Create Temperature and Volume conversion pages",
+        "description": "Complete remaining converters: Fahrenheit↔Celsius, Liters↔Milliliters, Gallons↔Liters with full page implementations.",
+        "details": "Create /app/temperature/fahrenheit-to-celsius/page.tsx; /app/volume/liters-to-milliliters/page.tsx; /app/volume/gallons-to-liters/page.tsx; Implement all with consistent layout pattern; Add category-specific explanations; Ensure proper reverse conversions work bidirectionally.",
+        "testStrategy": "Test conversions: 32F=0C, 1L=1000mL, 1gal=3.78541L; Verify all 8 pages load with correct titles; Confirm bidirectional conversion accuracy; Test input validation (numbers only).",
+        "priority": "high",
+        "dependencies": [
+          "1",
+          "2",
+          "3"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-12-14T18:51:46.792Z"
+      },
+      {
+        "id": "7",
+        "title": "Implement responsive design and mobile optimization",
+        "description": "Ensure all pages are fully responsive across desktop, tablet, and mobile with large tap targets and optimal layouts.",
+        "details": "Use Tailwind responsive classes (sm:, md:, lg:); Ensure converter inputs ≥44px touch targets; Mobile: stack ad below converter, single column layout; Tablet: 2-column possible; Desktop: sidebar ads; Test on common breakpoints (320px, 768px, 1024px+); Optimize font sizes for readability.",
+        "testStrategy": "Chrome DevTools responsive testing all pages; Verify touch targets ≥44px; Test landscape/portrait rotation; Confirm no horizontal scroll; Lighthouse mobile score ≥90.",
+        "priority": "high",
+        "dependencies": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-12-14T19:02:04.976Z"
+      },
+      {
+        "id": "8",
+        "title": "Add comprehensive SEO metadata to all pages",
+        "description": "Implement unique title tags, meta descriptions, canonical URLs, and semantic HTML structure for all 9 pages.",
+        "details": "Use Next.js Metadata API; Homepage: 'Unit Converter - Fast Accurate Conversions'; Each converter: '[From] to [To] Converter - Free Online Tool'; Meta descriptions 150-160 chars with keywords; Structured headings (h1=converter name, h2=sections); Open Graph tags; Robots.txt and sitemap.xml generation.",
+        "testStrategy": "Verify unique titles/descriptions via page source; Test Google Rich Results validator; Confirm semantic HTML (axe/lighthouse audit); Check sitemap includes all URLs.",
+        "priority": "high",
+        "dependencies": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "status": "in-progress",
+        "subtasks": [],
+        "updatedAt": "2025-12-14T19:02:05.874Z"
+      },
+      {
+        "id": "9",
+        "title": "Implement accessibility features (a11y)",
+        "description": "Ensure WCAG 2.1 AA compliance with keyboard navigation, screen reader support, and sufficient contrast.",
+        "details": "Add proper ARIA labels to inputs/dropdowns/buttons; Ensure focus management in converter widget; Keyboard-navigable dropdowns; Color contrast ≥4.5:1 (check #333 on #FFF, #4A90E2 buttons); Form labels associated with inputs; Skip-to-content link.",
+        "testStrategy": "Run axe DevTools audit (0 critical errors); Test keyboard navigation (tab through all interactive elements); NVDA/VoiceOver screen reader testing; Contrast checker validation.",
+        "priority": "medium",
+        "dependencies": [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "10",
+        "title": "Add performance optimizations and Core Web Vitals",
+        "description": "Optimize for ≤2s first meaningful paint, meet Core Web Vitals, and ensure 4G mobile performance.",
+        "details": "Next.js Image component for logo; Lazy load below-fold content; Preload critical fonts; Code splitting with dynamic imports; Minify CSS/JS; GZIP compression; Service worker for caching (optional); Critical CSS inlining.",
+        "testStrategy": "Lighthouse Performance ≥90 (mobile 4G emulation); PageSpeed Insights validation; Web Vitals monitoring setup; Verify TTFB <600ms.",
+        "priority": "medium",
+        "dependencies": [
+          "7",
+          "8"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "11",
+        "title": "Implement basic analytics tracking",
+        "description": "Add pageview tracking for all pages using a lightweight analytics solution.",
+        "details": "Integrate Simple Analytics or Umami (privacy-friendly); Track page views, referrer, device type; No personal data collection; Cookie consent banner if required; Events for conversion calculations performed.",
+        "testStrategy": "Verify analytics script loads; Test pageview events fire on navigation; Confirm no PII collected; Check consent banner functionality.",
+        "priority": "medium",
+        "dependencies": [
+          "8"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "12",
+        "title": "Add cookie consent banner and privacy compliance",
+        "description": "Implement minimal cookie banner for analytics compliance (GDPR/CCPA ready).",
+        "details": "Use react-cookie-consent or custom; Banner text: 'We use cookies for analytics. Accept?'; Persist preference in localStorage; Block analytics until consent; Links to Privacy policy page.",
+        "testStrategy": "Test banner displays on first visit; Verify analytics blocked pre-consent; Confirm preference persists across sessions; Test Privacy page link works.",
+        "priority": "medium",
+        "dependencies": [
+          "11"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "13",
+        "title": "Create documentation and style guide",
+        "description": "Document setup instructions, build process, and style guide matching PRD specifications.",
+        "details": "Create README.md with: npm install, npm run dev/build/start; Deploy instructions (Vercel/Netlify); Style guide: colors (#FFFFFF/#333333/#4A90E2/#7FA99B/#F5F5F5), typography (system fonts), spacing (Tailwind scale); Component usage examples.",
+        "testStrategy": "Verify all commands work as documented; Style guide matches live site; Deployment instructions tested on staging.",
+        "priority": "low",
+        "dependencies": [
+          "1",
+          "2",
+          "3",
+          "7",
+          "8",
+          "10"
+        ],
+        "status": "done",
+        "subtasks": [],
+        "updatedAt": "2025-12-14T18:51:47.631Z"
+      },
+      {
+        "id": "14",
+        "title": "End-to-end testing and QA across all converters",
+        "description": "Comprehensive testing of all 8 converters, navigation, and core user flows.",
+        "details": "Cypress/Playwright tests for: homepage→converter navigation, all conversion pairs (10 test values each), responsive layouts, form inputs (valid/invalid), related links; Test edge cases (0, decimals, large numbers); Cross-browser testing.",
+        "testStrategy": "100% test coverage of core flows; All converters accurate within 10^-6; No console errors; All links functional.",
+        "priority": "high",
+        "dependencies": [
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": "15",
+        "title": "Production deployment and monitoring setup",
+        "description": "Deploy to production domain with HTTPS, monitoring, and post-launch verification.",
+        "details": "Deploy to Vercel/Netlify with custom domain; Force HTTPS; Set up error monitoring (Sentry); Performance monitoring (Vercel Analytics); Verify all URLs work; Submit sitemap to Google Search Console; Check Core Web Vitals in production.",
+        "testStrategy": "Verify all 9 pages live and functional; HTTPS enforced; Load times ≤2s; No 404s; Analytics receiving data; Search Console indexing.",
+        "priority": "high",
+        "dependencies": [
+          "7",
+          "8",
+          "10",
+          "11",
+          "12",
+          "14"
+        ],
+        "status": "pending",
+        "subtasks": []
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "lastModified": "2025-12-14T19:02:05.875Z",
+      "taskCount": 15,
+      "completedCount": 8,
+      "tags": [
+        "master"
+      ]
+    }
+  }
+}

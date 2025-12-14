@@ -34,26 +34,27 @@ export default function ConverterWidget({ conversion }: ConverterWidgetProps) {
   const toUnit = isReversed ? conversion.fromUnit : conversion.toUnit;
 
   return (
-    <div className="bg-background border border-border rounded-xl p-6 shadow-sm">
+    <div className="bg-background border border-border rounded-xl p-4 sm:p-6 shadow-sm">
       {/* From Input */}
       <div className="space-y-2">
         <label
           htmlFor="from-value"
-          className="block text-sm font-medium text-foreground/70"
+          className="block text-sm sm:text-base font-medium text-foreground/70"
         >
           From
         </label>
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
           <input
             id="from-value"
             type="number"
+            inputMode="decimal"
             value={fromValue}
             onChange={(e) => setFromValue(e.target.value)}
-            className="flex-1 px-4 py-3 text-lg border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            className="w-full sm:flex-1 px-4 py-3 min-h-[48px] text-lg sm:text-xl border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             placeholder="Enter value"
           />
-          <div className="px-4 py-3 bg-muted border border-border rounded-lg min-w-[100px] flex items-center justify-center">
-            <span className="font-medium text-foreground">
+          <div className="px-4 py-3 min-h-[48px] bg-muted border border-border rounded-lg min-w-[100px] flex items-center justify-center">
+            <span className="font-medium text-foreground text-base sm:text-lg">
               {fromUnit.symbol}
             </span>
           </div>
@@ -61,14 +62,14 @@ export default function ConverterWidget({ conversion }: ConverterWidgetProps) {
       </div>
 
       {/* Swap Button */}
-      <div className="flex justify-center my-4">
+      <div className="flex justify-center my-4 sm:my-6">
         <button
           onClick={handleSwap}
-          className="p-3 rounded-full bg-muted hover:bg-primary/10 border border-border hover:border-primary transition-colors group"
+          className="p-3 min-w-[48px] min-h-[48px] rounded-full bg-muted hover:bg-primary/10 border border-border hover:border-primary transition-colors group active:scale-95"
           aria-label="Swap units"
         >
           <svg
-            className="w-5 h-5 text-foreground/60 group-hover:text-primary transition-colors"
+            className="w-6 h-6 text-foreground/60 group-hover:text-primary transition-colors"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -87,32 +88,32 @@ export default function ConverterWidget({ conversion }: ConverterWidgetProps) {
       <div className="space-y-2">
         <label
           htmlFor="to-value"
-          className="block text-sm font-medium text-foreground/70"
+          className="block text-sm sm:text-base font-medium text-foreground/70"
         >
           To
         </label>
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
           <input
             id="to-value"
             type="text"
             value={toValue}
             readOnly
-            className="flex-1 px-4 py-3 text-lg border border-border rounded-lg bg-muted text-foreground font-semibold"
+            className="w-full sm:flex-1 px-4 py-3 min-h-[48px] text-lg sm:text-xl border border-border rounded-lg bg-muted text-foreground font-semibold"
             placeholder="Result"
           />
-          <div className="px-4 py-3 bg-muted border border-border rounded-lg min-w-[100px] flex items-center justify-center">
-            <span className="font-medium text-foreground">{toUnit.symbol}</span>
+          <div className="px-4 py-3 min-h-[48px] bg-muted border border-border rounded-lg min-w-[100px] flex items-center justify-center">
+            <span className="font-medium text-foreground text-base sm:text-lg">{toUnit.symbol}</span>
           </div>
         </div>
       </div>
 
       {/* Result Summary */}
       {fromValue && toValue && (
-        <div className="mt-6 p-4 bg-primary/5 border border-primary/20 rounded-lg text-center">
-          <p className="text-lg text-foreground">
+        <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-primary/5 border border-primary/20 rounded-lg text-center">
+          <p className="text-base sm:text-lg text-foreground leading-relaxed">
             <span className="font-semibold">{fromValue}</span>{" "}
             <span className="text-foreground/70">{fromUnit.name}</span>
-            <span className="mx-2">=</span>
+            <span className="mx-1 sm:mx-2">=</span>
             <span className="font-semibold text-primary">{toValue}</span>{" "}
             <span className="text-foreground/70">{toUnit.name}</span>
           </p>

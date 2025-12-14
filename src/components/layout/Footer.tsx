@@ -5,19 +5,19 @@ export default function Footer() {
 
   return (
     <footer className="bg-muted border-t border-border mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+          <div className="col-span-2">
+            <Link href="/" className="inline-flex items-center gap-2 mb-3 sm:mb-4 min-h-[44px]">
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                 <span className="text-white font-bold text-sm">UC</span>
               </div>
-              <span className="font-semibold text-lg text-foreground">
+              <span className="font-semibold text-base sm:text-lg text-foreground">
                 Unit Converter
               </span>
             </Link>
-            <p className="text-foreground/60 text-sm max-w-md">
+            <p className="text-foreground/60 text-xs sm:text-sm max-w-md">
               Quick and accurate unit conversions for weight, length,
               temperature, and volume. Simple, fast, and free.
             </p>
@@ -25,12 +25,12 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Quick Links</h3>
+            <ul className="space-y-1">
               <li>
                 <Link
                   href="/"
-                  className="text-foreground/60 hover:text-primary text-sm transition-colors"
+                  className="inline-flex items-center min-h-[44px] text-foreground/60 hover:text-primary text-sm transition-colors"
                 >
                   Home
                 </Link>
@@ -38,7 +38,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-foreground/60 hover:text-primary text-sm transition-colors"
+                  className="inline-flex items-center min-h-[44px] text-foreground/60 hover:text-primary text-sm transition-colors"
                 >
                   About
                 </Link>
@@ -46,7 +46,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-foreground/60 hover:text-primary text-sm transition-colors"
+                  className="inline-flex items-center min-h-[44px] text-foreground/60 hover:text-primary text-sm transition-colors"
                 >
                   Contact
                 </Link>
@@ -56,12 +56,12 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Legal</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Legal</h3>
+            <ul className="space-y-1">
               <li>
                 <Link
                   href="/privacy"
-                  className="text-foreground/60 hover:text-primary text-sm transition-colors"
+                  className="inline-flex items-center min-h-[44px] text-foreground/60 hover:text-primary text-sm transition-colors"
                 >
                   Privacy Policy
                 </Link>
@@ -69,7 +69,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/terms"
-                  className="text-foreground/60 hover:text-primary text-sm transition-colors"
+                  className="inline-flex items-center min-h-[44px] text-foreground/60 hover:text-primary text-sm transition-colors"
                 >
                   Terms of Service
                 </Link>
@@ -79,15 +79,15 @@ export default function Footer() {
         </div>
 
         {/* Tools & Partners Placeholder */}
-        <div className="mt-8 pt-8 border-t border-border">
+        <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-border">
           <p className="text-foreground/40 text-xs text-center">
             Tools &amp; Partners - Coming Soon
           </p>
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-4 border-t border-border">
-          <p className="text-foreground/60 text-sm text-center">
+        <div className="mt-6 sm:mt-8 pt-4 border-t border-border">
+          <p className="text-foreground/60 text-xs sm:text-sm text-center">
             © {currentYear} Unit Converter. All rights reserved.
           </p>
         </div>

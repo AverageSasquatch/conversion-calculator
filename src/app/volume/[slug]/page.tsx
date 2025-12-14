@@ -5,6 +5,7 @@ import {
   getConversionBySlug,
   getConversionsByCategory,
 } from "@/lib/conversions";
+import { generateConverterMetadata } from "@/lib/metadata";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -25,14 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Not Found" };
   }
 
-  return {
-    title: conversion.title,
-    description: conversion.description,
-    openGraph: {
-      title: conversion.title,
-      description: conversion.description,
-    },
-  };
+  return generateConverterMetadata(conversion, "volume");
 }
 
 export default async function VolumeConverterPage({ params }: PageProps) {

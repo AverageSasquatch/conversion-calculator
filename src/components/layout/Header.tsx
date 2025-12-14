@@ -42,9 +42,9 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - 48px touch target */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            className="md:hidden p-3 min-w-[48px] min-h-[48px] rounded-lg hover:bg-muted transition-colors flex items-center justify-center active:scale-95"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
@@ -74,27 +74,27 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Large touch targets */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-4">
+          <nav className="md:hidden py-2 border-t border-border">
+            <div className="flex flex-col">
               <Link
                 href="/"
-                className="text-foreground/80 hover:text-primary transition-colors"
+                className="py-4 px-2 min-h-[48px] text-foreground/80 hover:text-primary hover:bg-muted/50 transition-colors rounded-lg flex items-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 href="/#converters"
-                className="text-foreground/80 hover:text-primary transition-colors"
+                className="py-4 px-2 min-h-[48px] text-foreground/80 hover:text-primary hover:bg-muted/50 transition-colors rounded-lg flex items-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Converters
               </Link>
               <Link
                 href="/about"
-                className="text-foreground/80 hover:text-primary transition-colors"
+                className="py-4 px-2 min-h-[48px] text-foreground/80 hover:text-primary hover:bg-muted/50 transition-colors rounded-lg flex items-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
