@@ -78,6 +78,40 @@ npm run build
 npm start
 ```
 
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Import the repository in [Vercel](https://vercel.com)
+3. Set environment variables:
+   - `NEXT_PUBLIC_SITE_URL`: Your production domain
+4. Deploy!
+
+Or use the Vercel CLI:
+
+```bash
+npm i -g vercel
+vercel
+```
+
+### Environment Variables
+
+Copy `.env.example` to `.env.local` and configure:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
+### Post-Deployment Checklist
+
+- [ ] Verify all pages load correctly
+- [ ] Check sitemap at `/sitemap.xml`
+- [ ] Verify robots.txt at `/robots.txt`
+- [ ] Submit sitemap to Google Search Console
+- [ ] Test Core Web Vitals with PageSpeed Insights
+- [ ] Verify HTTPS is enforced
+
 ## 📁 Project Structure
 
 ```

@@ -1,13 +1,27 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { Analytics } from "@/components/analytics/Analytics";
+import { CookieConsent } from "@/components/analytics/CookieConsent";
 
+// Optimize font loading - preload and display swap
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap", // Prevent FOIT (Flash of Invisible Text)
+  preload: true,
 });
+
+// Viewport configuration for mobile optimization
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#4A90E2",
+};
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://unitconverter.com";
 
@@ -81,9 +95,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased min-h-screen flex flex-col`}>
+        {/* Skip to main content link for keyboard users */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1" role="main">
+          {children}
+        </main>
         <Footer />
+        
+        {/* Analytics - wrapped in Suspense for useSearchParams */}
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
+        
+        {/* Cookie Consent Banner */}
+        <CookieConsent />
       </body>
     </html>
   );

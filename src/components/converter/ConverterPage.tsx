@@ -17,12 +17,25 @@ export default function ConverterPage({ slug }: ConverterPageProps) {
     notFound();
   }
 
+  // Pre-compute values for JSON-LD to avoid passing functions
+  const jsonLdData = {
+    slug: conversion.slug,
+    category: conversion.category,
+    fromUnit: conversion.fromUnit,
+    toUnit: conversion.toUnit,
+    title: conversion.title,
+    description: conversion.description,
+    explanation: conversion.explanation,
+    convertedValue: conversion.convert(1),
+    reverseConvertedValue: conversion.reverseConvert(1),
+  };
+
   return (
     <div className="min-h-screen">
       {/* Structured Data for SEO */}
-      <ConverterJsonLd conversion={conversion} />
-      <FAQJsonLd conversion={conversion} />
-      <BreadcrumbJsonLd conversion={conversion} />
+      <ConverterJsonLd data={jsonLdData} />
+      <FAQJsonLd data={jsonLdData} />
+      <BreadcrumbJsonLd data={jsonLdData} />
 
       {/* Top Banner Ad */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
@@ -42,11 +55,11 @@ export default function ConverterPage({ slug }: ConverterPageProps) {
               <p className="text-sm sm:text-base text-foreground/60">{conversion.description}</p>
             </div>
 
-            {/* Converter Widget */}
-            <ConverterWidget conversion={conversion} />
+            {/* Converter Widget - Client Component receives slug, looks up data itself */}
+            <ConverterWidget slug={slug} />
 
-            {/* Explanation Section */}
-            <ExplanationSection conversion={conversion} />
+            {/* Explanation Section - Server Component looks up data itself */}
+            <ExplanationSection slug={slug} />
 
             {/* Related Conversions */}
             <RelatedConversions currentSlug={slug} />

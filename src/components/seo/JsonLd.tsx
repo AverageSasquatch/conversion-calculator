@@ -1,18 +1,30 @@
-import { ConversionPair } from "@/lib/conversions";
+import { ConversionUnit } from "@/lib/conversions";
 
-interface JsonLdProps {
-  conversion: ConversionPair;
+interface JsonLdData {
+  slug: string;
+  category: string;
+  fromUnit: ConversionUnit;
+  toUnit: ConversionUnit;
+  title: string;
+  description: string;
+  explanation: string;
+  convertedValue: number;
+  reverseConvertedValue: number;
 }
 
-export function ConverterJsonLd({ conversion }: JsonLdProps) {
+interface JsonLdProps {
+  data: JsonLdData;
+}
+
+export function ConverterJsonLd({ data }: JsonLdProps) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://unitconverter.com";
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: `${conversion.fromUnit.name} to ${conversion.toUnit.name} Converter`,
-    description: conversion.description,
-    url: `${siteUrl}/${conversion.category}/${conversion.slug}`,
+    name: `${data.fromUnit.name} to ${data.toUnit.name} Converter`,
+    description: data.description,
+    url: `${siteUrl}/${data.category}/${data.slug}`,
     applicationCategory: "UtilityApplication",
     operatingSystem: "Any",
     offers: {
@@ -36,25 +48,25 @@ export function ConverterJsonLd({ conversion }: JsonLdProps) {
   );
 }
 
-export function FAQJsonLd({ conversion }: JsonLdProps) {
+export function FAQJsonLd({ data }: JsonLdProps) {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
       {
         "@type": "Question",
-        name: `How do I convert ${conversion.fromUnit.name} to ${conversion.toUnit.name}?`,
+        name: `How do I convert ${data.fromUnit.name} to ${data.toUnit.name}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: conversion.explanation,
+          text: data.explanation,
         },
       },
       {
         "@type": "Question",
-        name: `What is 1 ${conversion.fromUnit.symbol} in ${conversion.toUnit.symbol}?`,
+        name: `What is 1 ${data.fromUnit.symbol} in ${data.toUnit.symbol}?`,
         acceptedAnswer: {
           "@type": "Answer",
-          text: `1 ${conversion.fromUnit.symbol} equals ${conversion.convert(1).toFixed(4)} ${conversion.toUnit.symbol}.`,
+          text: `1 ${data.fromUnit.symbol} equals ${data.convertedValue.toFixed(4)} ${data.toUnit.symbol}.`,
         },
       },
     ],
@@ -68,11 +80,7 @@ export function FAQJsonLd({ conversion }: JsonLdProps) {
   );
 }
 
-export function BreadcrumbJsonLd({
-  conversion,
-}: {
-  conversion: ConversionPair;
-}) {
+export function BreadcrumbJsonLd({ data }: JsonLdProps) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://unitconverter.com";
 
   const breadcrumbJsonLd = {
@@ -88,14 +96,14 @@ export function BreadcrumbJsonLd({
       {
         "@type": "ListItem",
         position: 2,
-        name: conversion.category.charAt(0).toUpperCase() + conversion.category.slice(1),
+        name: data.category.charAt(0).toUpperCase() + data.category.slice(1),
         item: `${siteUrl}/#converters`,
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: `${conversion.fromUnit.name} to ${conversion.toUnit.name}`,
-        item: `${siteUrl}/${conversion.category}/${conversion.slug}`,
+        name: `${data.fromUnit.name} to ${data.toUnit.name}`,
+        item: `${siteUrl}/${data.category}/${data.slug}`,
       },
     ],
   };
