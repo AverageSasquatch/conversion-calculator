@@ -2,138 +2,138 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://unitconverter.com</loc>
+    <loc>https://conversioncalc.tech</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Weight Converters -->
   <url>
-    <loc>https://unitconverter.com/weight/pounds-to-kilograms</loc>
+    <loc>https://conversioncalc.tech/weight/pounds-to-kilograms</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/weight/ounces-to-grams</loc>
+    <loc>https://conversioncalc.tech/weight/ounces-to-grams</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/weight/kilograms-to-stones</loc>
+    <loc>https://conversioncalc.tech/weight/kilograms-to-stones</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Length Converters -->
   <url>
-    <loc>https://unitconverter.com/length/inches-to-centimeters</loc>
+    <loc>https://conversioncalc.tech/length/inches-to-centimeters</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/length/feet-to-meters</loc>
+    <loc>https://conversioncalc.tech/length/feet-to-meters</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/length/miles-to-kilometers</loc>
+    <loc>https://conversioncalc.tech/length/miles-to-kilometers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Temperature Converters -->
   <url>
-    <loc>https://unitconverter.com/temperature/fahrenheit-to-celsius</loc>
+    <loc>https://conversioncalc.tech/temperature/fahrenheit-to-celsius</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/temperature/celsius-to-kelvin</loc>
+    <loc>https://conversioncalc.tech/temperature/celsius-to-kelvin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Volume Converters -->
   <url>
-    <loc>https://unitconverter.com/volume/liters-to-milliliters</loc>
+    <loc>https://conversioncalc.tech/volume/liters-to-milliliters</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/volume/gallons-to-liters</loc>
+    <loc>https://conversioncalc.tech/volume/gallons-to-liters</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/volume/cups-to-milliliters</loc>
+    <loc>https://conversioncalc.tech/volume/cups-to-milliliters</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Data Size Converters -->
   <url>
-    <loc>https://unitconverter.com/data/megabytes-to-gigabytes</loc>
+    <loc>https://conversioncalc.tech/data/megabytes-to-gigabytes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/data/gigabytes-to-terabytes</loc>
+    <loc>https://conversioncalc.tech/data/gigabytes-to-terabytes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/data/kilobytes-to-megabytes</loc>
+    <loc>https://conversioncalc.tech/data/kilobytes-to-megabytes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Time Converters -->
   <url>
-    <loc>https://unitconverter.com/time/hours-to-minutes</loc>
+    <loc>https://conversioncalc.tech/time/hours-to-minutes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/time/days-to-hours</loc>
+    <loc>https://conversioncalc.tech/time/days-to-hours</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/time/weeks-to-days</loc>
+    <loc>https://conversioncalc.tech/time/weeks-to-days</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Area Converters -->
   <url>
-    <loc>https://unitconverter.com/area/square-feet-to-square-meters</loc>
+    <loc>https://conversioncalc.tech/area/square-feet-to-square-meters</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/area/acres-to-hectares</loc>
+    <loc>https://conversioncalc.tech/area/acres-to-hectares</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/area/square-miles-to-square-kilometers</loc>
+    <loc>https://conversioncalc.tech/area/square-miles-to-square-kilometers</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Speed Converters -->
   <url>
-    <loc>https://unitconverter.com/speed/mph-to-kmh</loc>
+    <loc>https://conversioncalc.tech/speed/mph-to-kmh</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/speed/kmh-to-ms</loc>
+    <loc>https://conversioncalc.tech/speed/kmh-to-ms</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unitconverter.com/speed/knots-to-mph</loc>
+    <loc>https://conversioncalc.tech/speed/knots-to-mph</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
