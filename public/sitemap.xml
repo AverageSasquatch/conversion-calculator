@@ -7,6 +7,23 @@
     <priority>1.0</priority>
   </url>
   
+  <!-- Static Pages -->
+  <url>
+    <loc>https://conversioncalc.tech/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://conversioncalc.tech/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://conversioncalc.tech/privacy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
   <!-- Weight Converters -->
   <url>
     <loc>https://conversioncalc.tech/weight/pounds-to-kilograms</loc>
@@ -138,3 +155,4 @@
     <priority>0.9</priority>
   </url>
 </urlset>
+
