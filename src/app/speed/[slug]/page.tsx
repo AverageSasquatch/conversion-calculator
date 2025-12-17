@@ -39,3 +39,4 @@ export default async function SpeedConverterPage({ params }: PageProps) {
 
   return <ConverterPage slug={slug} />;
 }
+

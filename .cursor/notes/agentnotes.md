@@ -82,3 +82,34 @@ Continue from wherever the checklist is at. Always check `project_checklist.md` 
   3. Mobile view (9:16 vertical)
 - Ad placements: Top banner, right sidebar (desktop), bottom (mobile)
 - Category cards: Weight, Length, Temperature, Volume, From (?)
+
+---
+
+## Blog Feature
+
+### Routes
+- `/blog` - Blog listing page (all articles)
+- `/blog/[slug]` - Individual blog post
+- `/admin` - Admin login page
+- `/admin/blog` - Blog management dashboard
+- `/admin/blog/new` - Create new post
+- `/admin/blog/[id]` - Edit existing post
+
+### Admin Authentication
+- Default password: `admin123` (change via ADMIN_PASSWORD env variable)
+- Cookie-based session (24-hour expiry)
+- Protected API routes at `/api/admin/*`
+
+### Data Storage
+- Blog posts stored in `/data/blog/posts.json`
+- File-based storage (no database required)
+- Supports markdown content
+
+### API Endpoints
+- `POST /api/admin/login` - Login
+- `POST /api/admin/logout` - Logout
+- `GET /api/admin/posts` - Get all posts
+- `POST /api/admin/posts` - Create post
+- `GET /api/admin/posts/[id]` - Get single post
+- `PUT /api/admin/posts/[id]` - Update post
+- `DELETE /api/admin/posts/[id]` - Delete post

@@ -104,11 +104,42 @@ A minimal viable website (MVW) for unit conversions with SEO-optimized pages, cl
 
 ---
 
+## Phase 7: Blog Feature ✅ COMPLETED
+
+### Blog Frontend
+- [x] Blog listing page at /blog
+- [x] Individual blog post page at /blog/[slug]
+- [x] Featured posts section
+- [x] Tags/topics display
+- [x] Markdown content rendering
+- [x] Related articles sidebar
+- [x] SEO metadata for blog pages
+
+### Blog Admin Backend
+- [x] Admin login page at /admin
+- [x] Password-based authentication
+- [x] Blog management dashboard at /admin/blog
+- [x] Create new post functionality
+- [x] Edit existing posts
+- [x] Delete posts
+- [x] Publish/draft status toggle
+- [x] Featured post flag
+- [x] Tags management
+- [x] Markdown preview in editor
+
+### Blog Data Storage
+- [x] File-based storage (JSON in /data/blog/)
+- [x] Blog library functions (CRUD operations)
+- [x] Slug generation from titles
+
+---
+
 ## Technical Stack
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Deployment**: TBD (Vercel recommended)
+- **Blog Storage**: File-based JSON
 
 ## Design System
 - Background: #FFFFFF

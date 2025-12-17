@@ -40,6 +40,12 @@ export default function Header() {
               Converters
             </Link>
             <Link
+              href="/blog"
+              className="text-foreground/80 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1"
+            >
+              Blog
+            </Link>
+            <Link
               href="/about"
               className="text-foreground/80 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1"
             >
@@ -108,6 +114,14 @@ export default function Header() {
                 role="menuitem"
               >
                 Converters
+              </Link>
+              <Link
+                href="/blog"
+                className="py-4 px-2 min-h-[48px] text-foreground/80 hover:text-primary hover:bg-muted/50 transition-colors rounded-lg flex items-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset"
+                onClick={() => setIsMobileMenuOpen(false)}
+                role="menuitem"
+              >
+                Blog
               </Link>
               <Link
                 href="/about"

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "sample1",
+    "slug": "understanding-metric-imperial-conversions",
+    "title": "Understanding Metric and Imperial Conversions",
+    "excerpt": "Learn the fundamentals of converting between metric and imperial units, and why both systems are still in use today.",
+    "content": "## Why Do We Have Two Measurement Systems?\n\nThe metric system and the imperial system are the two most widely used measurement systems in the world. While most countries have adopted the metric system, the United States, Liberia, and Myanmar continue to use imperial units for everyday measurements.\n\n### The Metric System\n\nThe metric system, also known as the International System of Units (SI), is a decimal-based system developed in France during the late 18th century. Its main advantage is its simplicity—conversions between units are always powers of 10.\n\nFor example:\n- 1 kilometer = 1,000 meters\n- 1 meter = 100 centimeters\n- 1 centimeter = 10 millimeters\n\n### The Imperial System\n\nThe imperial system evolved from English units used in the British Empire. It uses less intuitive conversion factors:\n\n- 1 mile = 5,280 feet\n- 1 foot = 12 inches\n- 1 pound = 16 ounces\n\n### Common Conversion Tips\n\n1. **Temperature**: Remember that 0°C = 32°F (freezing point of water)\n2. **Length**: 1 inch ≈ 2.54 cm (exact conversion)\n3. **Weight**: 1 kg ≈ 2.2 pounds\n\nUse our conversion tools to make accurate calculations every time!",
+    "author": "Unit Converter Team",
+    "publishedAt": "2024-12-01T10:00:00.000Z",
+    "updatedAt": "2024-12-01T10:00:00.000Z",
+    "featured": true,
+    "tags": ["education", "metric", "imperial", "conversions"],
+    "status": "published"
+  },
+  {
+    "id": "sample2",
+    "slug": "temperature-conversion-made-simple",
+    "title": "Temperature Conversion Made Simple",
+    "excerpt": "Master the art of converting between Fahrenheit, Celsius, and Kelvin with easy-to-remember formulas.",
+    "content": "## The Three Temperature Scales\n\nTemperature can be measured using three main scales: Fahrenheit, Celsius, and Kelvin. Each has its own history and use cases.\n\n### Celsius (°C)\n\nThe Celsius scale is used by most of the world. It's based on the freezing (0°C) and boiling (100°C) points of water at sea level.\n\n### Fahrenheit (°F)\n\nUsed primarily in the United States, the Fahrenheit scale sets water's freezing point at 32°F and boiling point at 212°F.\n\n### Kelvin (K)\n\nThe Kelvin scale is used in scientific contexts. It starts at absolute zero (-273.15°C), the coldest possible temperature.\n\n## Quick Conversion Formulas\n\n### Celsius to Fahrenheit\n```\n°F = (°C × 9/5) + 32\n```\n\n### Fahrenheit to Celsius\n```\n°C = (°F - 32) × 5/9\n```\n\n### Celsius to Kelvin\n```\nK = °C + 273.15\n```\n\n## Handy Reference Points\n\n| Description | °C | °F | K |\n|-------------|-----|-----|-------|\n| Absolute Zero | -273.15 | -459.67 | 0 |\n| Water Freezes | 0 | 32 | 273.15 |\n| Room Temperature | 20-22 | 68-72 | 293-295 |\n| Body Temperature | 37 | 98.6 | 310.15 |\n| Water Boils | 100 | 212 | 373.15 |\n\nTry our temperature converter for instant, accurate results!",
+    "author": "Unit Converter Team",
+    "publishedAt": "2024-11-15T14:30:00.000Z",
+    "updatedAt": "2024-11-15T14:30:00.000Z",
+    "featured": true,
+    "tags": ["temperature", "celsius", "fahrenheit", "kelvin", "formulas"],
+    "status": "published"
+  }
+]
+
