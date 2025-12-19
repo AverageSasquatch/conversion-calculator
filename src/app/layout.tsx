@@ -106,6 +106,16 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        
+        {/* Additional Advertising Network */}
+        <Script
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="194480"
+          async
+          data-cfasync="false"
+          strategy="afterInteractive"
+        />
+        
         {/* Skip to main content link for keyboard users */}
         <a
           href="#main-content"
