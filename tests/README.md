@@ -59,3 +59,5 @@ npx playwright test
 - [ ] Cookie consent banner appears
 
 
+
+

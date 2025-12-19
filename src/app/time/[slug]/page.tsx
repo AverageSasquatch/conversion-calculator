@@ -40,3 +40,5 @@ export default async function TimeConverterPage({ params }: PageProps) {
   return <ConverterPage slug={slug} />;
 }
 
+
+

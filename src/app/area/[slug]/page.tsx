@@ -40,3 +40,5 @@ export default async function AreaConverterPage({ params }: PageProps) {
   return <ConverterPage slug={slug} />;
 }
 
+
+
