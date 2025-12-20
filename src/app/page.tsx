@@ -4,6 +4,10 @@ import AdPlaceholder from "@/components/layout/AdPlaceholder";
 import { categories } from "@/lib/conversions";
 import { WebsiteJsonLd } from "@/components/seo/JsonLd";
 
+// Force static generation
+export const dynamic = "force-static";
+export const revalidate = false;
+
 export default function HomePage() {
   return (
     <div className="min-h-screen">

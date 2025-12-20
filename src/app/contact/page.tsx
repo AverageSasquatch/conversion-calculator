@@ -1,6 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
+// Force static generation
+export const dynamic = "force-static";
+export const revalidate = false;
+
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
