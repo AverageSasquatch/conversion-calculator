@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug, getRecentPosts } from "@/lib/blog";
+import { generateBlogMetadata } from "@/lib/metadata";
+import { BlogPostingSchema, BreadcrumbListSchema } from "@/components/structured-data";
+import { generateISODateWithTimezone, calculateWordCount } from "@/utils/structured-data";
 import AdPlaceholder from "@/components/layout/AdPlaceholder";
 
 interface BlogPostPageProps {
@@ -20,24 +23,8 @@ export async function generateMetadata({
     };
   }
 
-  return {
-    title: post.title,
-    description: post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      type: "article",
-      publishedTime: post.publishedAt,
-      modifiedTime: post.updatedAt,
-      authors: [post.author],
-      tags: post.tags,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
-    },
-  };
+  // Use the new SEO-compliant metadata generator
+  return generateBlogMetadata(post);
 }
 
 // Generate static paths for all published posts
@@ -114,8 +101,35 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const recentPosts = getRecentPosts(5).filter((p) => p.id !== post.id);
 
+  // Prepare structured data
+  const parts = post.title.split(':');
+  const topic = parts[0] || post.title;
+  
+  const breadcrumbs = [
+    { name: "Home", item: "https://conversioncalc.tech" },
+    { name: "Blog", item: "https://conversioncalc.tech/blog" },
+    { name: topic, item: `https://conversioncalc.tech/blog/${post.slug}` }
+  ];
+
   return (
-    <div className="min-h-screen bg-muted/30">
+    <>
+      {/* Structured Data for SEO */}
+      <BlogPostingSchema
+        headline={post.title}
+        description={post.excerpt}
+        articleSlug={post.slug}
+        articleBody={post.content.slice(0, 300)}
+        datePublished={generateISODateWithTimezone(new Date(post.publishedAt))}
+        dateModified={generateISODateWithTimezone(new Date(post.updatedAt))}
+        authorName={post.author}
+        authorUrl="https://conversioncalc.tech/about"
+        authorJobTitle="Content Writer"
+        wordCount={calculateWordCount(post.content)}
+        keywords={post.tags.join(', ')}
+      />
+      <BreadcrumbListSchema breadcrumbs={breadcrumbs} />
+
+      <div className="min-h-screen bg-muted/30">
       {/* Top Banner Ad */}
       <div className="bg-background border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
@@ -278,6 +292,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
