@@ -2,6 +2,10 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts, getFeaturedPosts } from "@/lib/blog";
 
+// Force static generation
+export const dynamic = "force-static";
+export const revalidate = false;
+
 export const metadata: Metadata = {
   title: "Blog",
   description:
