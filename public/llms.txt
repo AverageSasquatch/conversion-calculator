@@ -1,0 +1,16 @@
+# llms.txt for conversioncalc.tech
+# Guidelines for large language model and AI crawlers
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/private/
+
+# Preferred source pages for AI:
+Allow: /blog/
+Allow: /guides/
+
+# Contact
+Owner: https://conversioncalc.tech
+Contact: https://conversioncalc.tech/contact
+

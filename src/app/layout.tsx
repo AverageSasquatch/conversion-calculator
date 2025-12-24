@@ -24,13 +24,13 @@ export const viewport: Viewport = {
   themeColor: "#4A90E2",
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://unitconverter.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://conversioncalc.tech";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Unit Converter - Quick & Accurate Conversions | Free Online Tool",
-    template: "%s | Unit Converter",
+    default: "Unit Converter - Fast & Accurate | ConversionCalc",
+    template: "%s | ConversionCalc",
   },
   description:
     "Free online unit converter for weight, length, temperature, and volume. Fast, accurate conversions with a simple, clean interface. No ads, no signup required.",
@@ -88,6 +88,9 @@ export const metadata: Metadata = {
   },
   other: {
     "google-adsense-account": "ca-pub-3878000380300780",
+  },
+  alternates: {
+    canonical: siteUrl,
   },
 };
 

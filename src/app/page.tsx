@@ -3,16 +3,34 @@ import CategoryCard from "@/components/home/CategoryCard";
 import AdPlaceholder from "@/components/layout/AdPlaceholder";
 import { categories } from "@/lib/conversions";
 import { WebsiteJsonLd } from "@/components/seo/JsonLd";
+import FAQPageSchema from "@/components/structured-data/FAQPageSchema";
 
 // Force static generation
 export const dynamic = "force-static";
 export const revalidate = false;
 
 export default function HomePage() {
+  // FAQ data for homepage
+  const homepageFAQs = [
+    {
+      question: "How do I convert cups to grams?",
+      answer: "Use our cups to grams converter tool and select the ingredient to get accurate results. Different ingredients have different densities, so the conversion varies.",
+    },
+    {
+      question: "What is the best unit converter for cooking?",
+      answer: "Our unit converter supports all common cooking measurements including cups, grams, ounces, milliliters, and liters. Simply search for your conversion and get instant results.",
+    },
+    {
+      question: "How accurate are the conversions?",
+      answer: "All our conversions use precise conversion factors and are accurate to multiple decimal places. For cooking conversions, we account for ingredient-specific densities.",
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Structured Data for SEO */}
       <WebsiteJsonLd />
+      <FAQPageSchema faqs={homepageFAQs} />
 
       {/* Top Banner Ad */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
